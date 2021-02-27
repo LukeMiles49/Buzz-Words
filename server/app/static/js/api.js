@@ -1,25 +1,21 @@
 let myId;
 
 async function requestHistorySince(index) {
-	return [
-		"Paragraph 1",
-		"Paragraph 2"
-	];
+	var resp = await fetch("/api/history?since");
+	var data = await resp.json();
+	return data
 }
 
 async function requestOptions() {
-	// TODO
-	
-	const index = 3;
-	const options = [
-		"Option 1",
-		"Option 2",
-		"Option 3"
-	];
+	var resp = await fetch("/api/options");
+	var data = await resp.json();
+	const index = data.round;
+	const options = data.options;
 	
 	return [index, options];
 }
 
-async function castVote(optionIndex) {
+async function castVote(optionIndex,round) {
 	// TODO
+	return (await fetch(`/api/vote?id=${myId}&opt=${optionIndex}&round=${round}`,{"method":"POST"}));
 }
