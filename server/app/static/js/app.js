@@ -25,7 +25,7 @@ async function app() {
 		}
 		
 		// Clear previous options
-		options.innerHTML = '';
+		optionsElement.innerHTML = '';
 		
 		const currentRound = story.length;
 		
