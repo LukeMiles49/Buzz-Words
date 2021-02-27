@@ -1,4 +1,5 @@
 import random
+import time
 
 try:
     #assert False
@@ -25,11 +26,13 @@ class Blockchain():
         self.setup_next()
     def next_block(self):
         m = max(self.votesto)
-        nx = [i for i in range(3) if self.votesto[i]==max]
+        nx = [i for i in range(3) if self.votesto[i]==m]
+        #print(nx)
         self.blocks.append(self.opts[random.choice(nx)])
         self.setup_next()
 
     def setup_next(self):
+        self.blocktime=time.time()
         last = self.blocks[-1]
         self.opts=[]
         for i in range(3):
@@ -57,6 +60,8 @@ class Blockchain():
     def getOpts(self):
         return [x for x in self.opts]
     def history(self, since):
+        if time.time()-self.blocktime > 100:
+            self.next_block()
         return list(self.blocks[since:])
     def __len__(self):
         return len(self.blocks)
