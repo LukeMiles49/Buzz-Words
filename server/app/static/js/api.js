@@ -1,7 +1,7 @@
 let myId;
 
 async function requestHistorySince(index) {
-	var resp = await fetch("/api/history?since");
+	var resp = await fetch(`/api/history?since=${index}`);
 	var data = await resp.json();
 	return data
 }
