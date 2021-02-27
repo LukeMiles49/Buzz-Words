@@ -24,14 +24,16 @@ async function app() {
 			storyElement.appendChild(element);
 		}
 		
+		// Clear previous options
+		options.innerHTML = '';
+		
 		const currentRound = story.length;
 		
-		// Load options
+		// Load new options
 		const [roundID, options] = await requestOptions();
 		
 		if (roundID === currentRound) {
 			// Render options
-			options.innerHTML = ''; // Clear children
 			const optionsElements = [];
 			for (const optionIndex in options) {
 				const element = document.createElement('p');
