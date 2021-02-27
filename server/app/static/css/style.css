@@ -1,3 +1,21 @@
 * {
 	font-family: 'Architects Daughter', cursive;
 }
+
+#options > * {
+	border-radius: 5px;
+	padding: 5px;
+	background: #EEE;
+}
+
+#options > .enabled {
+	background: #DDD;
+}
+
+#options > .enabled:hover {
+	background: #FFC;
+}
+
+#options > .enabled:active {
+	background: #CFF;
+}
