@@ -6,7 +6,7 @@ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = GPT2LMHeadModel.from_pretrained('gpt2')
 
 def predict(input):
-	inputs = tokenizer.encode(input, return_tensor='pt')
+	inputs = tokenizer.encode(input, return_tensors='pt')
 	outputs = model.generate(inputs, max_length=200, do_sample=True)
 	return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
