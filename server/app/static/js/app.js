@@ -34,10 +34,18 @@ async function app() {
 		
 		if (roundID === currentRound) {
 			// Render options
+			const optionElements = [];
 			for (const optionIndex in options) {
 				const element = document.createElement('p');
 				element.innerText = options[optionIndex];
-				element.onclick = () => castVote(optionIndex, currentRound); // TODO: Disable options?
+				element.onclick = () => {
+					castVote(optionIndex, currentRound);
+					for (const opt of optionElements) {
+						opt.classList.remove('enabled');
+					}
+				};
+				element.classList.add('enabled');
+				optionElements.push(element);
 				optionsElement.appendChild(element);
 			}
 		}
