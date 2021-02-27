@@ -26,7 +26,7 @@ async function requestOptions() {
 async function castVote(optionIndex,round) {
 	while (true) {
 		try {
-			await fetch(`/api/vote?id=${myId}&opt=${optionIndex}&round=${round}`,{"method":"POST"});
+			return await fetch(`/api/vote?id=${myId}&opt=${optionIndex}&round=${round}`,{"method":"POST"});
 		} catch { }
 	}
 }
