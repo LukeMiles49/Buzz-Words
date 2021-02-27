@@ -18,6 +18,10 @@ def options():
 def history():
     since = request.args.get('since', type=int)
     return json.dumps(chain.history(since))
+@BLOCKCHAIN.route('/api/next', methods=['GET'])
+def next():
+    chain.next_block()
+    return "hi"
 @BLOCKCHAIN.route('/api/vote', methods=['POST'])
 def vote():
     id = request.args.get('id')

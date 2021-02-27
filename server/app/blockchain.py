@@ -26,7 +26,8 @@ class Blockchain():
         self.setup_next()
     def next_block(self):
         m = max(self.votesto)
-        nx = [i for i in range(3) if self.votesto[i]==max]
+        nx = [i for i in range(3) if self.votesto[i]==m]
+        #print(nx)
         self.blocks.append(self.opts[random.choice(nx)])
         self.setup_next()
 
