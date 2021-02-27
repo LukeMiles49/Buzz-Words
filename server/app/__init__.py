@@ -1,6 +1,7 @@
 from flask import Flask
 import hashlib
 import uuid
+from .index import INDEX
 
 app = Flask(__name__)
 
@@ -8,6 +9,8 @@ app.config['SECRET_KEY'] = hashlib.sha256(
     str(uuid.uuid4()).encode()
 ).hexdigest()
 
-app.config.from_object(__name__)
+# Register Blueprints
+app.register_blueprint(
+    INDEX, url_prefix='')
 
-from app import views
+app.config.from_object(__name__)
