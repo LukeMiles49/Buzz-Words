@@ -1,0 +1,28 @@
+AI
+Machine Learning
+Natural Language Processing
+Computer Vision
+Bio-Informatics
+
+IoT
+Edge Computing
+Serverless
+Blockchain
+5G
+Cloud Computing
+Distributed Computing
+
+Quantum Computing
+ARM
+
+Big Data
+Virtual Reality
+Augmented Reality
+Cross Platform
+As-A-Service
+HTML5
+Crypto Currency
+
+
+Project:
+Open Source
