@@ -34,13 +34,10 @@ class Blockchain():
         self.opts=[]
         for i in range(3):
             p = predict(last+"\n"+"\n")
-            print(p)
             p = p[len(last):]
-            print(p)
             while p[0]=="\n":
                 p=p[1:]
             l = p.find("\n")
-            print(p)
             if l>0:
                 p=p[:l]
             self.opts.append(p)

@@ -12,7 +12,7 @@ chain = Blockchain()
 def options():
     return json.dumps({
           "options" : chain.getOpts()
-        , "round" : len(chain)+1
+        , "round" : len(chain)
     })
 @BLOCKCHAIN.route('/api/history', methods=['GET'])
 def history():
@@ -23,7 +23,7 @@ def vote():
     id = request.args.get('id')
     opt = request.args.get('opt', type=int)
     round = request.args.get('round', type=int)
-    if(len(chain)!=round+1):
+    if(len(chain)!=round):
         return "failed"
     if chain.vote(id,opt):
         return "success"
