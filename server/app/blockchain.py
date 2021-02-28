@@ -22,7 +22,7 @@ except Exception as e:
 class Blockchain():
     def __init__(self):
         print("creating blockchain")
-        self.blocks=["initial block"]
+        self.blocks=["Let me tell you a story:"]
         self.setup_next()
     def next_block(self):
         m = max(self.votesto)
@@ -60,7 +60,7 @@ class Blockchain():
     def getOpts(self):
         return [x for x in self.opts]
     def history(self, since):
-        if time.time()-self.blocktime > 100:
+        if time.time()-self.blocktime > 60:
             self.next_block()
         return list(self.blocks[since:])
     def __len__(self):
