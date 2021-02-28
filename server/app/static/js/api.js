@@ -18,7 +18,7 @@ async function requestOptions() {
 			const index = data.round;
 			const options = data.options;
 			
-			if (options.length == 0) {
+			if (options.length < 3) {
 				await sleep(1000);
 				throw "Flask is too good :(";
 			}
