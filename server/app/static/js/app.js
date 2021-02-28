@@ -40,6 +40,7 @@ async function app() {
 				element.innerText = options[optionIndex];
 				element.onclick = () => {
 					castVote(optionIndex, currentRound);
+					element.classList.add('voted');
 					for (const opt of optionElements) {
 						opt.classList.remove('enabled');
 					}

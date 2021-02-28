@@ -8,14 +8,14 @@
 	background: #EEE;
 }
 
+#options > .voted {
+	background: #CFF;
+}
+
 #options > .enabled {
 	background: #DDD;
 }
 
 #options > .enabled:hover {
 	background: #FFC;
-}
-
-#options > .enabled:active {
-	background: #CFF;
 }
