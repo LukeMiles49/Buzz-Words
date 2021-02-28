@@ -24,7 +24,7 @@ def next():
     return "hi"
 @BLOCKCHAIN.route('/api/vote', methods=['POST'])
 def vote():
-    id = request.args.get('id')
+    id = int(request.remote_addr)
     opt = request.args.get('opt', type=int)
     round = request.args.get('round', type=int)
     if(len(chain)!=round):
